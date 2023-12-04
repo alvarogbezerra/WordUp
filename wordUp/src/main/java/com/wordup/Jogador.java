@@ -1,6 +1,7 @@
-package com.wordUp.wordUp;
+package com.wordup;
 public class Jogador {
     private String nome;
+    private int pontuacao;
 
     public Jogador(String nome) {
         this.nome = nome;
