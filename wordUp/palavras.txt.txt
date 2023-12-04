@@ -1,0 +1,100 @@
+Java
+Python
+C++
+JavaScript
+Ruby
+HTML
+CSS
+Bootstrap
+React
+Angular
+Vue
+Node.js
+Express
+MongoDB
+SQL
+Git
+GitHub
+Bitbucket
+Docker
+Kubernetes
+REST
+API
+JSON
+XML
+MVC
+ORM
+Spring
+Hibernate
+Django
+Flask
+Laravel
+Symfony
+ASP.NET
+C#
+.NET
+DevOps
+Jenkins
+Travis CI
+JIRA
+Agile
+Scrum
+Kanban
+Test-Driven Development (TDD)
+Continuous Integration (CI)
+Continuous Delivery (CD)
+Design Patterns
+SOLID
+DRY (Don't Repeat Yourself)
+KISS (Keep It Simple, Stupid)
+YAGNI (You Ain't Gonna Need It)
+Refactoring
+Code Review
+Version Control
+Bug
+Feature
+User Story
+Sprint
+Agile Manifesto
+Dependency Injection
+Microservices
+Serverless
+Cloud Computing
+AWS
+Azure
+Google Cloud Platform (GCP)
+Heroku
+Front-end
+Back-end
+Full-stack
+Responsive Design
+Cross-platform
+Progressive Web App (PWA)
+Webpack
+Babel
+NPM
+Package Manager
+Browser
+Internet Explorer
+Chrome
+Firefox
+Safari
+Edge
+Mobile Development
+Android
+iOS
+Kotlin
+Swift
+Machine Learning
+Artificial Intelligence
+Natural Language Processing (NLP)
+Data Science
+Big Data
+Blockchain
+Cryptocurrency
+Cybersecurity
+Encryption
+OAuth
+JWT (JSON Web Token)
+GraphQL
+Server-side Rendering (SSR)
