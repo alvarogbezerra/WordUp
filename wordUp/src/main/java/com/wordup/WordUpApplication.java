@@ -1,26 +1,29 @@
 package com.wordup;
 
-import org.springframework.boot.SpringApplication;
+//import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
+/*
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
+*/
 
 @SpringBootApplication
 public class WordUpApplication {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) {/*
         SpringApplication.run(WordUpApplication.class, args);
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
+        Jogo Jogo = new Jogo(null, null, null);
 
         //abertura
         System.out.println("Bem-vindo ao Jogo de Adivinhação de Palavras!");
         int modoJogo = 0;
+
         while (modoJogo != 1 && modoJogo != 2) {
             System.out.print("Escolha o modo de jogo (1 - Jogar sozinho, 2 - Jogar com outra pessoa): ");
             if (scanner.hasNextInt()) {
@@ -30,25 +33,24 @@ public class WordUpApplication {
                 scanner.next();
             }
         }
-
-        String nomeJogador1 = "";
-        String nomeJogador2 = "";
-
-        scanner.nextLine();
-
+        
         if (modoJogo == 1) {
+            Jogador jogador1 = new Jogador(scanner.next()); 
+        
             System.out.print("Digite o seu nome: ");
-            nomeJogador1 = scanner.nextLine();
-        } else {
+            jogador1.setNome(scanner.next()); 
+        } else if (modoJogo == 2) {
+            Jogador jogador1 = new Jogador(scanner.next());
+            Jogador jogador2 = new Jogador(scanner.next());
+        
             System.out.print("Digite o nome do Jogador 1: ");
-            nomeJogador1 = scanner.nextLine();
-
+            jogador1.setNome(scanner.next());
+        
             System.out.print("Digite o nome do Jogador 2: ");
-            nomeJogador2 = scanner.nextLine();
+            jogador2.setNome(scanner.next());
         }
-
+        
         List<String> palavras = carregarPalavrasDoArquivo("WordUp\\palavras.txt");
-
 
         String palavraEscolhida = palavras.get(random.nextInt(palavras.size())).toLowerCase();
         char[] palavraOculta = new char[palavraEscolhida.length()];
@@ -60,7 +62,7 @@ public class WordUpApplication {
         System.out.println("Tente adivinhar a palavra:");
 
         boolean palavraAdivinhada = false;
-        int tentativas = 0;
+        //int tentativas = 0; //desabilitei para usar a OO
 
         System.out.println(palavraEscolhida);//para facilitar o teste de mesa
 
@@ -111,18 +113,7 @@ public class WordUpApplication {
 
         scanner.close();
     }
-
-    private static boolean palavraAdivinhada(char[] palavraOculta) {
-        for (char c : palavraOculta) {
-            if (c == '_') {
-                return false; 
-            }
-        }
-        return true; 
-    }
     
-
-
 
 
 
@@ -137,18 +128,5 @@ public class WordUpApplication {
     private static void exibirPontuacao(String nomeJogador1, String nomeJogador2) {
         // Exibir pontuação aqui, se desejar
     }
-
-    private static List<String> carregarPalavrasDoArquivo(String nomeArquivo) {
-        List<String> palavras = new ArrayList<>();
-
-        try (Scanner scanner = new Scanner(new File(nomeArquivo))) {
-            while (scanner.hasNextLine()) {
-                palavras.add(scanner.nextLine().trim());
-            }
-        } catch (FileNotFoundException e) {
-            System.err.println("Erro ao carregar o arquivo de palavras: " + e.getMessage());
-        }
-
-        return palavras;
-    }
-}
+    */
+}}
