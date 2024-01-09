@@ -17,7 +17,7 @@ public class JogoAdivinhacao {
         //System.out.print("Digite o nome do Jogador 2: ");
         Jogador jogador2 = new Jogador("Emileny");//Ao finalizar os testes colocar "scanner.next()" no lugar do nome entre parênteses
 
-        List<String> palavras = carregarPalavrasDoArquivo("WordUp\\palavras.txt");
+        List<String> palavras = carregarPalavrasDoArquivo("WordUp\\palavras.txt"); // no linux utiliza apenas uma / para o caminho do diretório
 
         Jogo jogo = new Jogo(palavras, jogador1, jogador2);
         jogo.jogar(scanner);

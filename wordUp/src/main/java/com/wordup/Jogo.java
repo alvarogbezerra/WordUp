@@ -61,6 +61,9 @@ public class Jogo {
 
                 if (!letraRevelada) {
                     System.out.println("Letra não encontrada. Tente novamente.");
+                    jogadorAtual.setPontuacao(jogadorAtual.getPontuacao() - 5);
+                }else {
+                    jogadorAtual.setPontuacao(jogadorAtual.getPontuacao() + 10);
                 }
                 trocarJogador();
             } else if (opcao == 'p') {
@@ -68,11 +71,13 @@ public class Jogo {
                 String chute = scanner.next().toLowerCase();
 
                 if (chute.equals(palavraEscolhida)) {
+                    jogadorAtual.setPontuacao(jogadorAtual.getPontuacao() + palavraEscolhida.length());
                     palavraAdivinhada = true;
                     imprimirMensagemParabens(jogadorAtual);
                     break;
                 } else {
                     System.out.println("Chute incorreto. Tente novamente.");
+                    jogadorAtual.setPontuacao(jogadorAtual.getPontuacao() - 5);
                     trocarJogador();
                 }
             } else {
@@ -104,8 +109,23 @@ public class Jogo {
 
     private void imprimirMensagemParabens(Jogador jogadorAtual) {
         System.out.println("Parabéns " + jogadorAtual.getNome() + "! Você adivinhou a palavra " +
-                palavraEscolhida + " em " + jogadorAtual.getPontuacao() + " tentativas.");
+                palavraEscolhida + " em " + jogadorAtual.getTentativas() + " tentativas." + "\nVocê fez");
+
+                new Thread(() -> {
+                    for (int i = 0; i < 3; i++) { // Vai imprimir 5 reticências (5 segundos)
+                        System.out.print(".");  // Imprime uma reticência
+                        try {
+                            Thread.sleep(2000);  // Aguarda 1 segundo (1000 milissegundos)
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    // Após aguardar, imprime a pontuação final
+                    System.out.println("\n"+jogadorAtual.getPontuacao() + " pontos !!!");
+                }).start();
     }
+
+   
     
 }
 
