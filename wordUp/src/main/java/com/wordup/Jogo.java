@@ -121,6 +121,7 @@ public class Jogo {
     }
 
     private void trocarJogador() {
+        semaphore.release();
         jogadorAtual = (jogadorAtual == jogador1) ? jogador2 : jogador1;
     }
 
@@ -151,21 +152,23 @@ public class Jogo {
         System.out.println("Você fez");
 
         Thread mensagemThread = new Thread(() -> {
-            for (int i = 0; i < 3; i++) {
-                System.out.print(".");  // Imprime uma reticência
-                try {
+            try {
+                semaphore.acquire();  // Aguarda a permissão para imprimir a mensagem
+                for (int i = 0; i < 3; i++) {
+                    System.out.print(".");  // Imprime uma reticência
                     Thread.sleep(2000);  // Aguarda 2 segundos (2000 milissegundos)
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
                 }
+                System.out.println("\n" + jogadorAtual.getPontuacao() + " pontos !!!");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } finally {
+                semaphore.release();  // Libera a permissão após imprimir a mensagem
             }
-            System.out.println("\n" + jogadorAtual.getPontuacao() + " pontos !!!");
         });
-
         mensagemThread.start();
 
         try {
-            mensagemThread.join();  // Aguarde a thread da mensagem terminar
+            mensagemThread.join();  // Aguarda a thread da mensagem terminar
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
