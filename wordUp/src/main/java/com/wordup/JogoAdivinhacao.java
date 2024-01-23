@@ -9,15 +9,17 @@ import java.util.Scanner;
 public class JogoAdivinhacao {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        //System.out.println("Bem-vindo ao Jogo de Adivinhação de Palavras!");
+        System.out.println("Bem-vindo ao Jogo de Adivinhação de Palavras!");
 
-        //System.out.print("Digite o nome do Jogador 1: ");
-        Jogador jogador1 = new Jogador("Kedna");//Ao finalizar os testes colocar "scanner.next()" no lugar do nome entre parênteses
+        System.out.print("Digite o nome do Jogador 1: ");
+        String nome = scanner.nextLine();
+        Jogador jogador1 = new Jogador(nome);//Ao finalizar os testes colocar "scanner.next()" no lugar do nome entre parênteses
 
-        //System.out.print("Digite o nome do Jogador 2: ");
-        Jogador jogador2 = new Jogador("Emileny");//Ao finalizar os testes colocar "scanner.next()" no lugar do nome entre parênteses
+        System.out.print("Digite o nome do Jogador 2: ");
+        String nome2 = scanner.nextLine();
+        Jogador jogador2 = new Jogador(nome2);//Ao finalizar os testes colocar "scanner.next()" no lugar do nome entre parênteses
 
-        List<String> palavras = carregarPalavrasDoArquivo("WordUp\\palavras.txt"); // no linux utiliza apenas uma / para o caminho do diretório
+        List<String> palavras = carregarPalavrasDoArquivo("WordUp/palavras.txt"); // no linux utiliza apenas uma / para o caminho do diretório
 
         Jogo jogo = new Jogo(palavras, jogador1, jogador2);
         jogo.jogar(scanner);
