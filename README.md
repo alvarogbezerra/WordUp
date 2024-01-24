@@ -7,7 +7,7 @@ Threads serão utilizadas para gerenciar o tempo limite para responder cada perg
 
 Manual do jogo:  
 
-A dica é : Uma capital brasileira;
+DICA : é uma capital brasileira;
 
 O jogo só termina quando alguém ganha ;
 Ao iniciar o jogo, digite o nome na ordem que será feitas as jogadas;
@@ -17,3 +17,4 @@ No caso de chutar a palavra seus pontos será o numero de letras da palavra mais
 Então será a vez do jogador 2 escolher chutar a letra ou palavra;
 Para cada chute eles terão 15s para realiza-lo.
 
+CONSIDERE: capitais com nomes composto digite-os juntos e ignore a acentuação
