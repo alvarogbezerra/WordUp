@@ -1,5 +1,6 @@
 package com.wordup;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
@@ -7,6 +8,7 @@ import java.util.concurrent.*;
 
 public class Jogo {
     private List<String> palavras;
+    private List<Character> letrasChutadas = new ArrayList<>();
     private String palavraEscolhida;
     private char[] palavraOculta;
     private Jogador jogador1;
@@ -46,16 +48,20 @@ public class Jogo {
         boolean palavraAdivinhada = false;
 
         while (!palavraAdivinhada) {
-            System.out.println("---------- TESTE ------------");
-            System.out.println("Palavra escolhida : " );
-            System.out.println("Nome e tentativas do jogador 1 " + jogador1.getNome() + " " + jogador1.getTentativas());
-            System.out.println("Nome e tentativas do jogador 2 " + jogador2.getNome() + " " + jogador2.getTentativas());
-            System.out.println("---------- TESTE ------------");
+            // System.out.println("---------- TESTE ------------");
+            // System.out.println("Palavra escolhida : " );
+            // System.out.println("Nome e tentativas do jogador 1 " + jogador1.getNome() + " " + jogador1.getTentativas());
+            // System.out.println("Nome e tentativas do jogador 2 " + jogador2.getNome() + " " + jogador2.getTentativas());
+            // System.out.println("---------- TESTE ------------");
 
-            System.out.println("Palavra: " + String.valueOf(palavraOculta));
-            System.out.println("Jogador atual: " + jogadorAtual.getNome());
+            System.out.println("|----------------------------------------------| ");
+            System.out.println("|Palavra: " + String.valueOf(palavraOculta));
+            System.out.println("|Jogador atual: " + jogadorAtual.getNome());
+            System.out.println("|letras chutadas: " + letrasChutadas);
+            System.out.println("|----------------------------------------------|");
 
-            System.out.print("Escolha uma opção (L para letra, P para chutar a palavra): ");
+
+            System.out.print("Escolha uma opção | L | para letra OU | P | para chutar a palavra): ");
             char opcao = scanner.next().toLowerCase().charAt(0);
 
             if (opcao == 'l' || opcao == 'p') {
@@ -65,6 +71,7 @@ public class Jogo {
             if (opcao == 'l') {
                 System.out.print("Digite uma letra: ");
                 char letra = scanner.next().toLowerCase().charAt(0);
+                letrasChutadas.add(letra);
                 processarEscolhaLetra(letra);
             } else if (opcao == 'p') {
                 System.out.print("Chute a palavra completa: ");
