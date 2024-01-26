@@ -14,6 +14,7 @@ Ao iniciar o jogo, digite o nome na ordem que será feitas as jogadas;
 O jogador 1 escolhe chutar a letra ou a palavra; 
 Se ele escolher chutar a letrar e acertar ele ganha 10 pontos, se ele errar ele perde 5 pontos;
 No caso de chutar a palavra seus pontos será o numero de letras da palavra mais os pontos que ele tem;
+No caso de seus pontos serem negativos, pois erro muitas letras, ele ganha apenas o total de numero da palavra;
 Então será a vez do jogador 2 escolher chutar a letra ou palavra;
 Para cada chute eles terão 15s para realiza-lo.
 

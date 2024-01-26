@@ -118,7 +118,11 @@ public class Jogo {
 
     private void processarEscolhaPalavra(String chute) {
         if (chute.equals(palavraEscolhida)) {
-            jogadorAtual.setPontuacao(jogadorAtual.getPontuacao() + palavraEscolhida.length());
+            if (jogadorAtual.getPontuacao() > 0){
+                jogadorAtual.setPontuacao(palavraEscolhida.length() + jogadorAtual.getPontuacao());
+            }else {
+                jogadorAtual.setPontuacao(palavraEscolhida.length());
+            }
             imprimirMensagemParabens(jogadorAtual);
             System.exit(0); // Saia do jogo após acertar a palavra
         } else {
